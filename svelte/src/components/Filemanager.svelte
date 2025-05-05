@@ -23,6 +23,7 @@
 		menuOptions = getMenuOptions,
 		viewModeOptions = null,
 		extraInfo = null,
+		folderSuffix = null,
 		init = null,
 		icons = function (file, size) {
 			const { type, ext } = file;
@@ -120,6 +121,12 @@
 
 <Locale words={en} optional={true}>
 	<Modals>
-		<Layout {readonly} {menuOptions} {extraInfo} {viewModeOptions} />
+		<Layout
+			{readonly}
+			{menuOptions}
+			{extraInfo}
+			{viewModeOptions}
+			{folderSuffix}
+		/>
 	</Modals>
 </Locale>

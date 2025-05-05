@@ -7,7 +7,7 @@
 
 	let path = $derived($panels[$activePanel].path);
 
-	let { folderIcon = false, folder = {} } = $props();
+	let { folderIcon = false, folder = {}, folderSuffix } = $props();
 
 	const _ = getContext("wx-i18n").getGroup("filemanager");
 
@@ -31,12 +31,16 @@
 	{:else}<span class="wx-toggle-placeholder"></span>{/if}
 	<i class={folderIcon || "wxi-folder"}></i>
 	<span class="wx-name"> {name} </span>
+
+	{#if folderSuffix}
+		{@render folderSuffix(folder)}
+	{/if}
 </li>
 
 {#if open && folder.data && folder.data.length && hasFolders}
 	{#each folder.data as folder (folder.id)}
 		{#if folder.type === "folder"}
-			<Folder {folder} />
+			<Folder {folder} {folderSuffix} />
 		{/if}
 	{/each}
 {/if}
@@ -45,6 +49,7 @@
 	.wx-folder {
 		display: flex;
 		align-items: center;
+		gap: 4px;
 		cursor: default;
 		letter-spacing: 0.2px;
 		width: 100%;
@@ -59,7 +64,7 @@
 	}
 	i {
 		font-size: 22px;
-		margin-right: 8px;
+		margin-right: 4px;
 		max-height: 100%;
 		color: var(--wx-color-primary);
 	}
@@ -74,6 +79,6 @@
 		flex-shrink: 0;
 	}
 	.wx-name {
-		padding-right: 8px;
+		padding-right: 4px;
 	}
 </style>

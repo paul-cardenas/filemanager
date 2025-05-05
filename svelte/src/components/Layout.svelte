@@ -19,6 +19,7 @@
 		menuOptions,
 		extraInfo,
 		viewModeOptions,
+		folderSuffix,
 	} = $props();
 
 	let sidebarWidth = $state();
@@ -237,7 +238,11 @@
 								class:wx-sidebar-visible={showSidebar}
 								bind:clientWidth={sidebarWidth}
 							>
-								<Sidebar {readonly} {menuOptions} />
+								<Sidebar
+									{readonly}
+									{menuOptions}
+									{folderSuffix}
+								/>
 							</div>
 							<div
 								class="wx-content"
@@ -347,7 +352,8 @@
 	.wx-filemanager
 		> :global(span[data-menu-ignore="true"])
 		> :global(span[data-menu-ignore="true"]) {
-		height: 100%;
+		flex: 1;
+		min-height: 0;
 		width: 100%;
 		display: flex;
 	}

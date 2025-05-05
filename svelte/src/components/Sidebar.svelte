@@ -8,7 +8,7 @@
 	import Drive from "./Drive.svelte";
 	import UploadButton from "./UploadButton.svelte";
 
-	let { readonly, menuOptions } = $props();
+	let { readonly, menuOptions, folderSuffix } = $props();
 
 	const _ = getContext("wx-i18n").getGroup("filemanager");
 	const { showPrompt } = getContext("filemanager-modals");
@@ -54,7 +54,7 @@
 		</div>
 	{/if}
 	<div class="wx-tree">
-		<Tree />
+		<Tree {folderSuffix} />
 	</div>
 	<Drive />
 </div>

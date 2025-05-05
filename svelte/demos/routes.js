@@ -11,6 +11,7 @@ import BackendData from "./cases/BackendData.svelte";
 import DataProvider from "./cases/DataProvider.svelte";
 import BackendFilter from "./cases/BackendFilter.svelte";
 import ViewModes from "./cases/ViewModes.svelte";
+import TreeFolderSuffix from "./cases/TreeFolderSuffix.svelte";
 
 export const links = [
 	["/base/:skin", "Basic File Manager", BasicInit],
@@ -26,4 +27,5 @@ export const links = [
 	["/data-provider/:skin", "Saving to backend", DataProvider],
 	["/serverfilter/:skin", "Filtering on backend", BackendFilter],
 	["/view-modes/:skin", "View modes", ViewModes],
+	["/folder-suffix/:skin", "Folder suffix", TreeFolderSuffix],
 ];

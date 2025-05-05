@@ -8,6 +8,8 @@
 	const api = getContext("filemanager-store");
 	const { tree: data, panels, activePanel } = api.getReactiveState();
 
+	let { folderSuffix } = $props();
+
 	const crumbs = $derived($panels[$activePanel]._crumbs);
 
 	function toggle(id) {
@@ -33,7 +35,7 @@
 	<ul use:delegateClick={{ click, toggle }}>
 		{#each $data.byId(0).data as folder (folder.id)}
 			{#if folder.type === "folder"}
-				<Folder {folder} />
+				<Folder {folder} {folderSuffix} />
 			{/if}
 		{/each}
 	</ul>
