@@ -10,6 +10,7 @@ import ExtraInfo from "./cases/ExtraInfo.svelte";
 import BackendData from "./cases/BackendData.svelte";
 import DataProvider from "./cases/DataProvider.svelte";
 import BackendFilter from "./cases/BackendFilter.svelte";
+import ViewModes from "./cases/ViewModes.svelte";
 
 export const links = [
 	["/base/:skin", "Basic File Manager", BasicInit],
@@ -24,4 +25,5 @@ export const links = [
 	["/serverdata/:skin", "Backend data", BackendData],
 	["/data-provider/:skin", "Saving to backend", DataProvider],
 	["/serverfilter/:skin", "Filtering on backend", BackendFilter],
+	["/view-modes/:skin", "View modes", ViewModes],
 ];

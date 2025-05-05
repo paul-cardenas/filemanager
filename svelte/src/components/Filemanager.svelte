@@ -21,6 +21,7 @@
 		activePanel = 0,
 		readonly = false,
 		menuOptions = getMenuOptions,
+		viewModeOptions = null,
 		extraInfo = null,
 		init = null,
 		icons = function (file, size) {
@@ -119,6 +120,6 @@
 
 <Locale words={en} optional={true}>
 	<Modals>
-		<Layout {readonly} {menuOptions} {extraInfo} />
+		<Layout {readonly} {menuOptions} {extraInfo} {viewModeOptions} />
 	</Modals>
 </Locale>

@@ -4,7 +4,7 @@
 	import Search from "./ui/Search.svelte";
 	import Icon from "./ui/Icon.svelte";
 
-	let { narrowMode = false, onshowtree } = $props();
+	let { narrowMode = false, onshowtree, viewModeOptions } = $props();
 
 	const api = getContext("filemanager-store");
 
@@ -16,7 +16,7 @@
 		{ icon: "wxi-view-sequential", id: "table" },
 		{ icon: "wxi-view-grid", id: "cards" },
 		{ icon: "wxi-view-column", id: "panels" },
-	];
+	].filter(option => !viewModeOptions || viewModeOptions.includes(option.id));
 
 	function changeMode({ value }) {
 		api.exec("set-mode", { mode: value });

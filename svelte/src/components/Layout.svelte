@@ -14,7 +14,12 @@
 	import TableView from "./Table/View.svelte";
 	import CardsView from "./Cards/View.svelte";
 
-	let { readonly = false, menuOptions, extraInfo } = $props();
+	let {
+		readonly = false,
+		menuOptions,
+		extraInfo,
+		viewModeOptions,
+	} = $props();
 
 	let sidebarWidth = $state();
 
@@ -208,7 +213,7 @@
 			<Info {narrowMode} {extraInfo} />
 		</div>
 	{:else}
-		<Toolbar {narrowMode} onshowtree={toggleSidebar} />
+		<Toolbar {narrowMode} onshowtree={toggleSidebar} {viewModeOptions} />
 		<ContextMenu
 			dataKey={"id"}
 			at={"point"}
